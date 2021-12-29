@@ -29,8 +29,11 @@
         {},
         React.createElement(
           "h1", 
-          {}, 
-          "React is Rendered") // Third parameter child we create a react element oppose to just test in between div
+          {}, [
+            React.createElement(Person),
+            React.createElement(Person),
+            React.createElement(Person)
+          ]) // Third parameter child we create a react element oppose to just test in between div
       )
     }
     // ReactDOM render creates the new element, then target
