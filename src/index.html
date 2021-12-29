@@ -7,6 +7,19 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">React not Rendered</div>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script>
+
+    // React.createElement(element, optional attributes, optional children)
+    const App = () => {
+      return React.createElement("div", {},
+        React.createElement("h1", {}, "React is Rendered")
+      )
+    }
+    // ReactDOM render creates the new element, then target
+    ReactDOM.render(React.createElement(App), document.getElementById("root"))
+  </script>
 </body>
 </html>
