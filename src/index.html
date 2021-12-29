@@ -13,9 +13,24 @@
   <script>
 
     // React.createElement(element, optional attributes, optional children)
+
+    const Person = () => {
+      return(
+        React.createElement("div", {}, [
+          React.createElement("h1", {}, "Boi"),
+          React.createElement("p", {}, "Developer")
+        ]) // Array of children instead of nested
+      )
+    }
+
     const App = () => {
-      return React.createElement("div", {},
-        React.createElement("h1", {}, "React is Rendered")
+      return React.createElement(
+        "div", 
+        {},
+        React.createElement(
+          "h1", 
+          {}, 
+          "React is Rendered") // Third parameter child we create a react element oppose to just test in between div
       )
     }
     // ReactDOM render creates the new element, then target
