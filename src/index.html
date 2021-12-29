@@ -14,11 +14,11 @@
 
     // React.createElement(element, optional attributes, optional children)
 
-    const Person = () => {
+    const Person = (props) => {
       return(
         React.createElement("div", {}, [
-          React.createElement("h1", {}, "Boi"),
-          React.createElement("p", {}, "Developer")
+          React.createElement("h1", { key: "4"}, props.name),
+          React.createElement("p", { key: "5"}, props.description)
         ]) // Array of children instead of nested
       )
     }
@@ -30,9 +30,9 @@
         React.createElement(
           "h1", 
           {}, [
-            React.createElement(Person),
-            React.createElement(Person),
-            React.createElement(Person)
+            React.createElement(Person, { name: "Boi", description: "Developer", key: "1"}),
+            React.createElement(Person, { name: "Yuri", description: "Manager", key: "2"}),
+            React.createElement(Person, { name: "Adrian", description: "Lead Server", key: "3"})
           ]) // Third parameter child we create a react element oppose to just test in between div
       )
     }
